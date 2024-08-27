@@ -36,20 +36,25 @@ class FetchLinks extends Command
         $dom = new \DOMDocument();
         @$dom->loadHTML($html);
         $xpath = new \DOMXPath($dom);
-        $links = $xpath->query('//a[contains(@class, "bookmark_title")]');
+        $bookmarkNodes = $xpath->query('//div[contains(@class, "bookmark")]');
 
         $tagsToFilter = ['laravel', 'vue', 'vue.js', 'php', 'api'];
 
-        foreach ($links as $link) {
-            $url = $link->getAttribute('href');
-            $title = $link->nodeValue;
-            $tags = $link->getAttribute('tags');
-            $comments = $link->getAttribute('description');
+        foreach ($bookmarkNodes as $bookmarkNode) {
+            $urlNode = $xpath->query('.//a[contains(@class, "bookmark_title")]', $bookmarkNode)->item(0);
+            $url = $urlNode ? $urlNode->getAttribute('href') : null;
+            $title = $urlNode ? $urlNode->nodeValue : null;
+            $tagsNode = $xpath->query('.//a[contains(@class, "tag")]', $bookmarkNode);
+            $tags = [];
+            foreach ($tagsNode as $tagNode) {
+                $tags[] = $tagNode->nodeValue;
+            }
+            $commentsNode = $xpath->query('.//div[contains(@class, "description")]', $bookmarkNode)->item(0);
+            $comments = $commentsNode ? $commentsNode->nodeValue : null;
 
             // Check if the link has any of the specified tags
-            $linkTags = explode(' ', $tags);
             $hasValidTag = false;
-            foreach ($linkTags as $tag) {
+            foreach ($tags as $tag) {
                 if (in_array($tag, $tagsToFilter)) {
                     $hasValidTag = true;
                     break;
@@ -63,12 +68,12 @@ class FetchLinks extends Command
                 // Save to database
                 Link::updateOrCreate(
                     ['url' => $url],
-                    ['title' => $title, 'tags' => $tags, 'comments' => $comments, 'is_valid' => $isValid]
+                    ['title' => $title, 'tags' => implode(' ', $tags), 'comments' => $comments, 'is_valid' => $isValid]
                 );
             }
-        }
 
-        $this->info('Links fetched and saved successfully.');
+            $this->info('Links fetched and saved successfully.');
+        }
     }
 
     private function checkUrl($url)

@@ -1,44 +1,50 @@
 <template>
     <div class="container mx-auto p-4">
-        <h1 class="text-3xl font-bold mb-6 text-center">Links</h1>
         <div class="mb-6 flex justify-center">
             <div class="flex flex-wrap gap-4">
                 <label v-for="tag in tags" :key="tag"
-                    class="inline-flex items-center bg-gray-100 p-2 rounded-lg shadow-md">
+                    class="inline-flex items-center bg-gray-100 p-4 rounded-lg shadow-md hover:bg-gray-200 focus-within:bg-gray-200 transition duration-300 ease-in-out">
                     <input type="checkbox" :value="tag" v-model="selectedTags"
-                        class="form-checkbox h-5 w-5 text-blue-600" />
-                    <span class="ml-2 text-gray-700">{{ tag }}</span>
+                        class="form-checkbox h-5 w-5 text-blue-600 focus:ring-blue-500 focus:ring-2 rounded mr-2" />
+                    <span class="text-gray-700">{{ tag }}</span>
                 </label>
             </div>
         </div>
         <ul class="space-y-4">
-            <li v-for="link in filteredLinks" :key="link.id" class="p-6 border rounded-lg shadow-lg bg-white">
+            <li v-for="link in filteredLinks" :key="link.id"
+                class="p-6 border rounded-lg shadow-lg bg-white hover:shadow-xl transition duration-300 ease-in-out">
                 <a :href="link.url" target="_blank" class="text-xl font-semibold text-blue-600 hover:underline">{{
                     link.title }}</a>
                 <p class="mt-2 text-gray-600">{{ link.comments }}</p>
+                <div class="mt-2 flex flex-wrap gap-2">
+                    <span v-for="tag in link.tags.split(' ')" :key="tag"
+                        class="inline-block bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded">
+                        {{ tag }}
+                    </span>
+                </div>
             </li>
         </ul>
     </div>
 </template>
 
 <script>
-import { ref, computed, onMounted } from 'vue';
-import axios from 'axios';
+import { ref, computed, onMounted } from "vue";
+import axios from "axios";
 
 export default {
     setup() {
-        const tags = ref(['laravel', 'vue', 'vue.js', 'php', 'api']);
+        const tags = ref(["laravel", "vue", "vue.js", "php", "api"]);
         const selectedTags = ref([]);
         const links = ref([]);
 
         const filteredLinks = computed(() => {
-            return links.value.filter(link =>
-                selectedTags.value.every(tag => link.tags.includes(tag))
+            return links.value.filter((link) =>
+                selectedTags.value.every((tag) => link.tags.includes(tag))
             );
         });
 
         onMounted(() => {
-            axios.get('/api/links').then(response => {
+            axios.get("/api/links").then((response) => {
                 links.value = response.data;
             });
         });

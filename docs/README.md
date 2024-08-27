@@ -4,6 +4,10 @@
 
 This project is a Laravel application that fetches and processes links from Pinboard, and presents them using a Vue.js front-end. The application includes a command to fetch links, an API route to return the data in JSON format, and a front-end interface to display the data with a dark/light mode switch.
 
+## Brief
+
+For more details about the project requirements, please refer to the [BRIEF.md](./BRIEF.md) file.
+
 ## Installation
 
 1. **Clone the repository**:
@@ -60,11 +64,24 @@ This project is a Laravel application that fetches and processes links from Pinb
 
 ## Dependencies
 
-- Laravel 11
--- PHP 8.3
-- Vue.js 3
--- Axios
+- Laravel 11  
+- - PHP 8.3  
+- Vue.js 3  
+-- Axios  
 
-## Brief
+## App Previews
 
-For more details about the project requirements, please refer to the [BRIEF.md](./BRIEF.md) file.
+![Light Mode Full Preview](./imgs/light-full-prev.png "Light Mode Full Preview")
+![Dark Mode Full Preview](./imgs/dark-full-prev.png "Dark Mode Full Preview")
+![Light Mode Filtered Preview](./imgs/light-filtered-prev.png "Light Mode Filtered Preview")
+![Dark Mode Filtered Preview](./imgs/dark-filtered-prev.png "Dark Mode Filtered Preview")
+![Responsive Full Preview](./imgs/responsive-full-prev.png "Responsive Full Preview")
+![Responsive Filtered Preview](./imgs/responsive-filtered-prev.png "Responsive Filtered Preview")
+
+## Summary
+
+Task Completion time was 2 hours and 32 minutes  
+Unit Testing Completion Time was   
+Total Time Spent was 2 hours and 32 minutes  
+  
+I tried to stay away from adding external packages in order to display my knowledge of what's already inside Laravel, Vue and Intertia. I chose Inertia and Breeze for this due to the fact that it's a quick and easy install of Laravel with Vue, without having to worry too much about a regular vue application set-up

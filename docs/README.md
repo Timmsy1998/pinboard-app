@@ -71,12 +71,18 @@ For more details about the project requirements, please refer to the [BRIEF.md](
 
 ## App Previews
 
-![Light Mode Full Preview](./imgs/light-full-prev.png "Light Mode Full Preview")
-![Dark Mode Full Preview](./imgs/dark-full-prev.png "Dark Mode Full Preview")
-![Light Mode Filtered Preview](./imgs/light-filtered-prev.png "Light Mode Filtered Preview")
-![Dark Mode Filtered Preview](./imgs/dark-filtered-prev.png "Dark Mode Filtered Preview")
-![Responsive Full Preview](./imgs/responsive-full-prev.png "Responsive Full Preview")
-![Responsive Filtered Preview](./imgs/responsive-filtered-prev.png "Responsive Filtered Preview")
+<p align="center">
+  <img src="./imgs/light-full-prev.png" alt="Light Mode Full Preview" title="Light Mode Full Preview" width="45%" />
+  <img src="./imgs/dark-full-prev.png" alt="Dark Mode Full Preview" title="Dark Mode Full Preview" width="45%" />
+</p>
+<p align="center">
+  <img src="./imgs/light-filtered-prev.png" alt="Light Mode Filtered Preview" title="Light Mode Filtered Preview" width="45%" />
+  <img src="./imgs/dark-filtered-prev.png" alt="Dark Mode Filtered Preview" title="Dark Mode Filtered Preview" width="45%" />
+</p>
+<p align="center">
+  <img src="./imgs/responsive-full-prev.png" alt="Responsive Full Preview" title="Responsive Full Preview" width="45%" />
+  <img src="./imgs/responsive-filtered-prev.png" alt="Responsive Filtered Preview" title="Responsive Filtered Preview" width="45%" />
+</p>
 
 ## Summary
 

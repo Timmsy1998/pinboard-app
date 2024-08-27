@@ -68,6 +68,7 @@ For more details about the project requirements, please refer to the [BRIEF.md](
 - - PHP 8.3  
 - Vue.js 3  
 - - Axios  
+- Tailwind CSS  
 
 ## App Previews
 
@@ -90,4 +91,17 @@ Task Completion time was 2 hours and 32 minutes
 Unit Testing Completion Time was 35 minutes  
 Total Time Spent was 3 hours and 07 minutes
   
-I tried to stay away from adding external packages in order to display my knowledge of what's already inside Laravel, Vue and Intertia. I chose Inertia and Breeze for this due to the fact that it's a quick and easy install of Laravel with Vue, without having to worry too much about a regular vue application set-up
+### Approach and Reasoning
+
+1. **Avoiding External Packages**:  
+    - **Reason**: I aimed to showcase my knowledge of the built-in features and capabilities of Laravel, Vue, and Inertia. By avoiding external packages, I demonstrated my ability to leverage the core functionalities of these frameworks effectively.  
+    - **Benefit**: This approach ensures that the application remains lightweight and avoids potential compatibility issues with third-party packages.  
+
+2. **Choosing Inertia & Breeze**:  
+    - **Reason**: Inertia and Breeze provide a quick and easy setup for integrating Laravel with Vue. Inertia allows for a seamless single-page application (SPA) experience without the need for a traditional API, while Breeze offers a simple and elegant authentication scaffolding should this be needed in future expansion.  
+    - **Benefit**: This choice allowed me to focus on the core functionality of the application without spending too much time on the initial setup. It also provided a clean and maintainable codebase.
+
+
+### Conclusion
+
+By following this approach, I was able to efficiently build and test the application using the core features of Laravel, Vue, and Inertia. This demonstrates my ability to make informed decisions and utilize the strengths of these frameworks to deliver a robust and maintainable application.

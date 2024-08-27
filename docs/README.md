@@ -22,7 +22,7 @@ This project is a Laravel application that fetches and processes links from Pinb
     npm install
     ```
 
-4. **Setup the Environment Variables**:
+4. **Setup the Environment Variables**:  
     Copy the `.env.example` file to `.env` and update the relevant configuration settings
 
 5. **Run Database Migrations**:
@@ -36,7 +36,9 @@ This project is a Laravel application that fetches and processes links from Pinb
     ```
 
 7. **Fetch the Links**:
-    *To Be Configured*
+    ```bash
+    php artisan app:fetch-links
+    ```
 
 ## Running the Application Locally
 
@@ -52,11 +54,9 @@ This project is a Laravel application that fetches and processes links from Pinb
     ```
 
 3. **Navigate to the local environment**:
-    The local environment should be accessible at either http://127.0.0.1:8000/ or http://localhost:8000
-
-## API
-
-**To Be Built**
+    The local environment should be accessible at either http://127.0.0.1:8000/ or http://localhost:8000/  
+      
+    The frontend for this application is viewable at http://127.0.0.1:8000/links or http://localhost:8000/links 
 
 ## Dependencies
 

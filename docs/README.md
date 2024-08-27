@@ -87,7 +87,7 @@ For more details about the project requirements, please refer to the [BRIEF.md](
 ## Summary
 
 Task Completion time was 2 hours and 32 minutes  
-Unit Testing Completion Time was 35 minutes
+Unit Testing Completion Time was 35 minutes  
 Total Time Spent was 3 hours and 07 minutes
   
 I tried to stay away from adding external packages in order to display my knowledge of what's already inside Laravel, Vue and Intertia. I chose Inertia and Breeze for this due to the fact that it's a quick and easy install of Laravel with Vue, without having to worry too much about a regular vue application set-up
